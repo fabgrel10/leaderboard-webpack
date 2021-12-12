@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb-base", // Used by Microverse
+    // "eslint:recommended",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "arrowParens": "avoid",
+        "printWidth": 80,
+        "trailingComma": "none"
+      },
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "no-unused-vars": 1,
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "eol-last": "off"
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
+}
