@@ -15,18 +15,6 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "arrowParens": "avoid",
-        "printWidth": 80,
-        "trailingComma": "none"
-      },
-      {
-        "usePrettierrc": true
-      }
-    ],
     "no-unused-vars": 1,
     "no-shadow": "off",
     "no-param-reassign": "off",
