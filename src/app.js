@@ -1,8 +1,38 @@
 import './scss/app.scss';
+import { addScoreToLocalStorage, renderScoreboard } from './helpers/helpers';
 
-const app = document.getElementById('app');
-const p = document.createElement('p');
+const form = document.getElementById('add-score-form');
+const name = document.getElementById('name-input');
+const score = document.getElementById('score-input');
+const refreshScoreboard = document.getElementById('refresh-scoreboard');
+let scores = [];
 
-app.innerHTML = '<h1>Leaderboard</h1>';
-p.textContent = 'Leaderboard list app using webpack and ES6 features';
-app.appendChild(p);
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const newScore = {
+    name: name.value,
+    score: score.value,
+  };
+
+  if (newScore.name && newScore.score) {
+    scores.push(newScore);
+    addScoreToLocalStorage(scores);
+    renderScoreboard(scores);
+  }
+  form.reset();
+});
+
+refreshScoreboard.addEventListener('click', () => {
+  scores = localStorage.setItem('scores', JSON.stringify([]));
+  renderScoreboard(scores);
+});
+
+window.addEventListener('load', () => {
+  if (!localStorage.getItem('scores')) {
+    localStorage.setItem('scores', JSON.stringify([]));
+  }
+
+  scores = JSON.parse(localStorage.getItem('scores')) || [];
+  renderScoreboard(scores);
+});
