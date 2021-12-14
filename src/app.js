@@ -15,10 +15,13 @@ form.addEventListener('submit', (event) => {
     score: score.value,
   };
 
-  scores.push(newScore);
-  addScoreToLocalStorage(scores);
+  if (newScore.name && newScore.score) {
+    scores.push(newScore);
+    addScoreToLocalStorage(scores);
+    renderScoreboard(scores);
+  }
   form.reset();
-  renderScoreboard(scores);
+
 });
 
 refreshScoreboard.addEventListener('click', () => {
