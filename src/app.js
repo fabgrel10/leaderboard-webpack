@@ -21,7 +21,6 @@ form.addEventListener('submit', (event) => {
     renderScoreboard(scores);
   }
   form.reset();
-
 });
 
 refreshScoreboard.addEventListener('click', () => {
@@ -36,4 +35,4 @@ window.addEventListener('load', () => {
 
   scores = JSON.parse(localStorage.getItem('scores')) || [];
   renderScoreboard(scores);
-})
+});

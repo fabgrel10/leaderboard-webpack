@@ -12,7 +12,7 @@ function clearHTML() {
 
 function renderScoreboard(scores) {
   clearHTML();
-  scores.forEach(score => {
+  scores.forEach((score) => {
     const li = document.createElement('li');
     li.innerHTML = `${score.name} - ${score.score}`;
     scoreboard.appendChild(li);
