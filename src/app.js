@@ -2,8 +2,8 @@ import './scss/app.scss';
 import { addScoreToLocalStorage, renderScoreboard } from './helpers/helpers';
 
 const form = document.getElementById('add-score-form');
-const name = document.getElementById('name');
-const score = document.getElementById('score');
+const name = document.getElementById('name-input');
+const score = document.getElementById('score-input');
 const refreshScoreboard = document.getElementById('refresh-scoreboard');
 let scores = [];
 
