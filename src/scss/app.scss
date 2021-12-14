@@ -1,11 +1,8 @@
-/* Core variables */
-@import 'base/vars';
-
 /* CSS Reset */
-@import 'base/reset';
+@import "base/reset";
 
 /* Mixins, helpers and functions */
-@import 'base/mixins';
+@import "base/mixins";
 
 /* Fonts */
 @import "base/fonts";
@@ -36,15 +33,14 @@ li:nth-child(odd) {
   color: #000;
   cursor: pointer;
   border: 3px solid;
-  padding: 0.20em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  padding: 0.2em 0.5em;
+  box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
   user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
 }
 
 .button:active {
-  box-shadow: 0px 0px 0px 0px;
+  box-shadow: 0 0 0 0;
 }
 
 /* Containers */
@@ -65,7 +61,7 @@ li:nth-child(odd) {
 #app {
   background-color: $white;
   margin: 25px auto;
-  padding: 15px 15px;
+  padding: 15px;
   width: 800px;
   box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
 }
@@ -85,6 +81,7 @@ li:nth-child(odd) {
 }
 
 /* Left section */
+/* stylelint-disable-next-line selector-id-pattern */
 #aside-left__header {
   position: relative;
   width: 100%;
@@ -106,7 +103,7 @@ li:nth-child(odd) {
   margin-top: 35px;
   padding: 15px;
   border: 1px solid #ccc;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  box-shadow: rgb(255 255 255 / 20%) 0 0 0 1px inset, rgb(0 0 0 / 90%) 0 0 0 1px;
 }
 
 /* Left section */
