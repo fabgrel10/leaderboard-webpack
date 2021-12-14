@@ -22,11 +22,15 @@ form.addEventListener('submit', (event) => {
 });
 
 refreshScoreboard.addEventListener('click', () => {
-  scores = localStorage.setItem('scores', []);
+  scores = localStorage.setItem('scores', JSON.stringify([]));
   renderScoreboard(scores);
 });
 
 window.addEventListener('load', () => {
+  if (!localStorage.getItem('scores')) {
+    localStorage.setItem('scores', JSON.stringify([]));
+  }
+
   scores = JSON.parse(localStorage.getItem('scores')) || [];
   renderScoreboard(scores);
 })
