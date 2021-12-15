@@ -1,4 +1,4 @@
-import { renderScoreboard } from '../helpers/helpers';
+import { addScoreToLocalStorage, renderScoreboard } from '../helpers/helpers';
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jUqREHdPhobU657jBEmk/scores/';
 
@@ -20,6 +20,7 @@ async function getScores() {
   const responseStart = await fetch(url);
   const responseData = await responseStart.json();
   renderScoreboard(responseData.result);
+  addScoreToLocalStorage(responseData.result);
 }
 
 export { postScore, getScores };

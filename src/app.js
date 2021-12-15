@@ -1,6 +1,7 @@
-import './scss/app.scss';
 import { addScoreToLocalStorage, renderScoreboard } from './helpers/helpers';
 import { getScores, postScore } from './api/api';
+
+import './scss/app.scss';
 
 const form = document.getElementById('add-score-form');
 const name = document.getElementById('name-input');
@@ -33,5 +34,5 @@ window.addEventListener('load', () => {
   }
 
   scores = JSON.parse(localStorage.getItem('scores')) || [];
-  renderScoreboard(scores.result[0]);
+  renderScoreboard(scores);
 });
