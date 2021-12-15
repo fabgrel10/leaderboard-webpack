@@ -15,7 +15,7 @@ function addScore(event) {
 
   if (newScore.user && newScore.score) {
     postScore(newScore.setScore());
-    getScores();
+    // getScores(); // This refreshes the scoreboard automatically when a new score is added.
   }
   form.reset();
 }
