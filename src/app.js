@@ -1,8 +1,34 @@
+import { renderScoreboard, Score } from './helpers/helpers';
+import { getScores, postScore } from './api/api';
+
 import './scss/app.scss';
 
-const app = document.getElementById('app');
-const p = document.createElement('p');
+const form = document.getElementById('add-score-form');
+const name = document.getElementById('name-input');
+const score = document.getElementById('score-input');
+const refreshScoreboard = document.getElementById('refresh-scoreboard');
+let scores = [];
 
-app.innerHTML = '<h1>Leaderboard</h1>';
-p.textContent = 'Leaderboard list app using webpack and ES6 features';
-app.appendChild(p);
+function addScore(event) {
+  event.preventDefault();
+  const newScore = new Score(name.value, score.value);
+
+  if (newScore.user && newScore.score) {
+    postScore(newScore.setScore());
+    // getScores(); // This refreshes the scoreboard automatically when a new score is added.
+  }
+  form.reset();
+}
+
+form.addEventListener('submit', addScore);
+
+refreshScoreboard.addEventListener('click', getScores);
+
+window.addEventListener('load', () => {
+  if (!localStorage.getItem('scores')) {
+    localStorage.setItem('scores', JSON.stringify([]));
+  }
+
+  scores = JSON.parse(localStorage.getItem('scores')) || [];
+  renderScoreboard(scores);
+});

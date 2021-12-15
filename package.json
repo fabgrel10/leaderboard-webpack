@@ -1,5 +1,5 @@
 {
-  "name": "Leaderboard",
+  "name": "leaderboard",
   "version": "1.0.0",
   "description": "Leaderboard list app using webpack and ES6 features",
   "private": true,
@@ -41,6 +41,7 @@
     "sass-loader": "^12.3.0",
     "stylelint": "^14.1.0",
     "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-csstree-validator": "^2.0.0",
     "terser-webpack-plugin": "^5.2.5",
     "webpack": "^5.64.4",
     "webpack-bundle-analyzer": "^4.5.0",
