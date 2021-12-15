@@ -14,7 +14,7 @@ function renderScoreboard(scores) {
   clearHTML();
   scores.forEach((score) => {
     const li = document.createElement('li');
-    li.innerHTML = `${score.name} - ${score.score}`;
+    li.innerHTML = `${score.user} - ${score.score}`;
     scoreboard.appendChild(li);
   });
 }
