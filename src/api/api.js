@@ -1,6 +1,6 @@
 import { addScoreToLocalStorage, renderScoreboard } from '../helpers/helpers';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jUqREHdPhobU657jBEmk/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/FSamBbtmJzcMOH6zTL3v/scores/';
 
 async function postScore(data) {
   const params = {
@@ -17,10 +17,10 @@ async function postScore(data) {
 }
 
 async function getScores() {
-  const responseStart = await fetch(url);
-  const responseData = await responseStart.json();
-  renderScoreboard(responseData.result);
-  addScoreToLocalStorage(responseData.result);
+  const apiCall = await fetch(url);
+  const response = await apiCall.json();
+  renderScoreboard(response.result);
+  addScoreToLocalStorage(response.result);
 }
 
 export { postScore, getScores };

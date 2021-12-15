@@ -1,4 +1,4 @@
-import { addScoreToLocalStorage, renderScoreboard } from './helpers/helpers';
+import { renderScoreboard, Score } from './helpers/helpers';
 import { getScores, postScore } from './api/api';
 
 import './scss/app.scss';
@@ -9,22 +9,18 @@ const score = document.getElementById('score-input');
 const refreshScoreboard = document.getElementById('refresh-scoreboard');
 let scores = [];
 
-form.addEventListener('submit', (event) => {
+function addScore(event) {
   event.preventDefault();
-
-  const newScore = {
-    user: name.value,
-    score: score.value,
-  };
+  const newScore = new Score(name.value, score.value);
 
   if (newScore.user && newScore.score) {
-    postScore(newScore);
-    scores.push(newScore);
-    addScoreToLocalStorage(scores);
-    renderScoreboard(scores);
+    postScore(newScore.setScore());
+    getScores();
   }
   form.reset();
-});
+}
+
+form.addEventListener('submit', addScore);
 
 refreshScoreboard.addEventListener('click', getScores);
 
