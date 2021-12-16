@@ -1,6 +1,8 @@
 import { addScoreToLocalStorage, renderScoreboard } from '../helpers/helpers';
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/FSamBbtmJzcMOH6zTL3v/scores/';
+const endpoint = process.env.GAME_ENDPOINT;
+const gameId = process.env.GAME_ID;
+const url = `${endpoint}/${gameId}/scores/`;
 
 async function postScore(data) {
   const params = {
@@ -21,6 +23,7 @@ async function getScores() {
   const response = await apiCall.json();
   renderScoreboard(response.result);
   addScoreToLocalStorage(response.result);
+  console.log(url);
 }
 
 export { postScore, getScores };

@@ -9,6 +9,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const environment = require('./configuration/environment');
 
@@ -95,6 +96,7 @@ module.exports = {
         },
       ],
     }),
+    new Dotenv(),
   ].concat(htmlPluginEntries),
   target: 'web',
 };
