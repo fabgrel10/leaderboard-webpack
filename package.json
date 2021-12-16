@@ -35,6 +35,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
+    "imagemin": "^8.0.1",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.0",
     "sass": "^1.43.5",
