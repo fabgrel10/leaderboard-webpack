@@ -83,7 +83,7 @@ li:nth-child(odd) {
   margin: 25px 0;
 }
 
-/* Left section */
+/* Right section */
 /* stylelint-disable-next-line selector-id-pattern */
 #aside-left__header {
   position: relative;
@@ -125,4 +125,15 @@ li:nth-child(odd) {
   display: block;
   position: absolute;
   left: 100px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  #main {
+    grid-template-columns: 1fr;
+  }
+
+  .aside-right {
+    margin: 0 auto;
+  }
 }

@@ -23,7 +23,6 @@ async function getScores() {
   const response = await apiCall.json();
   renderScoreboard(response.result);
   addScoreToLocalStorage(response.result);
-  console.log(url);
 }
 
 export { postScore, getScores };
